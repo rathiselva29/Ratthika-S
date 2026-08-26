@@ -74,16 +74,17 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
   const totalDuration = 10; // 10 seconds total
 
   useEffect(() => {
+    const startTime = Date.now();
     const timerInterval = setInterval(() => {
-      setSecondsElapsed((prev) => {
-        if (prev >= totalDuration - 0.1) {
-          clearInterval(timerInterval);
-          onComplete();
-          return totalDuration;
-        }
-        return prev + 0.1;
-      });
-    }, 100);
+      const elapsed = (Date.now() - startTime) / 1000;
+      if (elapsed >= totalDuration) {
+        clearInterval(timerInterval);
+        setSecondsElapsed(totalDuration);
+        onComplete();
+      } else {
+        setSecondsElapsed(elapsed);
+      }
+    }, 80);
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {

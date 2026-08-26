@@ -64,37 +64,34 @@ export const AboutSection: React.FC = () => {
               
               {/* Frame Card */}
               <div className="relative glass-panel rounded-2xl p-4 sm:p-5 border border-white/10 overflow-hidden shadow-2xl">
-                <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-black flex items-center justify-center border border-white/5">
-                  <div className="w-full h-full relative group">
-                    <SmartImage
-                      src={PERSONAL_INFO.profileImagePlaceholder}
-                      alt="S. Ratthika - Web Developer & Digital Creator"
-                      fallbackType="profile"
-                      className="w-full h-full object-cover transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-                  </div>
-
-                  {/* Corner Accent Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
-                    <div>
-                      <div className="flex items-center gap-1.5">
-                        <h4 className="text-sm font-bold text-white font-serif italic">S. Ratthika</h4>
-                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                      </div>
-                      <p className="text-xs text-[#F27D26]">B.E. Computer Science (8.2 CGPA)</p>
-                    </div>
-                    <span className="px-2.5 py-1 rounded-sm text-[10px] font-mono font-bold bg-[#F27D26]/20 text-[#F27D26] border border-[#F27D26]/30 uppercase">
-                      Engineer
-                    </span>
-                  </div>
+                <div className="relative rounded-xl overflow-hidden aspect-[3/4] bg-[#090d16] flex items-center justify-center border border-white/10">
+                  <img
+                    src="/images/profile/ratthika-profile.jpg"
+                    alt="S. Ratthika"
+                    loading="eager"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
 
-                {/* Professional Status Bar (No Upload Button) */}
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-300">
+                {/* Profile Identity & Status */}
+                <div className="mt-4 p-3 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between">
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <h4 className="text-sm font-bold text-white font-serif italic">S. Ratthika</h4>
+                      <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <p className="text-xs text-[#F27D26] font-medium">B.E. Computer Science (8.2 CGPA)</p>
+                  </div>
+                  <span className="px-2.5 py-1 rounded-sm text-[10px] font-mono font-bold bg-[#F27D26]/20 text-[#F27D26] border border-[#F27D26]/30 uppercase">
+                    Engineer
+                  </span>
+                </div>
+
+                {/* Professional Status Bar */}
+                <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-300">
                   <span className="flex items-center gap-1.5 text-emerald-400">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Open for Projects & Roles</span>
+                    <span>Open for Roles & Projects</span>
                   </span>
                   <span className="text-[11px] text-slate-400">Trichy / Neyveli, India</span>
                 </div>
