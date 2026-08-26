@@ -27,19 +27,53 @@ export const SmartImage: React.FC<SmartImageProps> = ({
     switch (fallbackType) {
       case 'profile':
         return (
-          <div className="w-full h-full min-h-[360px] bg-gradient-to-br from-slate-900 via-indigo-950/60 to-purple-950/40 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden border border-indigo-500/20 rounded-2xl">
-            <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-            <div className="relative w-32 h-32 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-1 mb-5 shadow-2xl shadow-indigo-500/30">
-              <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-purple-200 to-pink-300">
-                RS
+          <div className="w-full h-full min-h-[380px] bg-gradient-to-b from-[#38bdf8]/30 via-[#0f172a] to-[#050505] p-6 flex flex-col items-center justify-between text-center relative overflow-hidden border border-white/10 rounded-2xl group">
+            {/* Background lighting simulating professional photo studio */}
+            <div className="absolute top-0 inset-x-0 h-48 bg-gradient-to-b from-[#38bdf8]/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-grid-pattern opacity-15 pointer-events-none" />
+            
+            {/* Center Avatar with Suit & Glasses Aesthetic */}
+            <div className="relative z-10 flex flex-col items-center mt-4">
+              <div className="relative w-32 h-32 rounded-2xl bg-gradient-to-tr from-[#F27D26] via-amber-400 to-sky-400 p-1 mb-4 shadow-2xl shadow-[#F27D26]/20">
+                <div className="w-full h-full rounded-2xl bg-[#090d16] flex flex-col items-center justify-center relative overflow-hidden border border-white/10">
+                  {/* Subtle portrait illustration / initials */}
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-b from-amber-100 to-amber-200 flex items-center justify-center text-slate-900 font-bold text-xl relative shadow-inner">
+                    <span>SR</span>
+                    {/* Glasses hint */}
+                    <div className="absolute top-4 w-9 h-3 border-2 border-slate-900 rounded-sm opacity-60" />
+                  </div>
+                  {/* Formal blazer suit icon hint */}
+                  <div className="w-16 h-8 bg-slate-900 rounded-t-xl mt-2 border-t-2 border-white flex justify-center pt-0.5">
+                    <div className="w-3 h-3 bg-white rotate-45 -mt-1.5" />
+                  </div>
+                </div>
               </div>
+
+              <h4 className="text-xl font-bold text-white font-serif italic">S. Ratthika</h4>
+              <p className="text-xs font-mono text-[#F27D26] uppercase tracking-wider mt-1">
+                B.E. Computer Science & Engineering
+              </p>
             </div>
-            <h4 className="text-xl font-bold text-white font-display">S. Ratthika</h4>
-            <p className="text-sm text-indigo-400 font-medium mt-1">Web Developer & Creator</p>
-            <div className="mt-4 flex flex-wrap gap-1.5 justify-center max-w-xs">
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">CSE Engineer</span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] bg-purple-500/10 text-purple-300 border border-purple-500/20">Full-Stack Intern</span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] bg-pink-500/10 text-pink-300 border border-pink-500/20">Digital Artist</span>
+
+            {/* Verified Credentials Pills */}
+            <div className="relative z-10 mt-4 flex flex-wrap gap-1.5 justify-center max-w-xs">
+              <span className="px-2.5 py-1 rounded-sm text-[10px] font-mono bg-white/5 text-slate-300 border border-white/10">
+                8.2 CGPA
+              </span>
+              <span className="px-2.5 py-1 rounded-sm text-[10px] font-mono bg-[#F27D26]/10 text-[#F27D26] border border-[#F27D26]/20 font-bold">
+                Infosys Certified
+              </span>
+              <span className="px-2.5 py-1 rounded-sm text-[10px] font-mono bg-white/5 text-slate-300 border border-white/10">
+                Handball Winner
+              </span>
+              <span className="px-2.5 py-1 rounded-sm text-[10px] font-mono bg-white/5 text-slate-300 border border-white/10">
+                Hindi Prathamic 1st Class
+              </span>
+            </div>
+
+            <div className="relative z-10 w-full pt-4 mt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-slate-400">
+              <span>MAM COLLEGE OF ENG.</span>
+              <span className="text-emerald-400 font-bold">VERIFIED PROFILE</span>
             </div>
           </div>
         );

@@ -61,13 +61,90 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
       onMouseMove={handleMouseMove}
       className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#050505]"
     >
-      {/* Dynamic Background Glow & Grid */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
+      {/* ================= DYNAMIC ANIMATING GRADIENT MESH & GRID BACKGROUND ================= */}
       
-      {/* Radial ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F27D26]/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-white/[0.02] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-20 right-10 w-80 h-80 bg-[#F27D26]/5 rounded-full blur-[140px] pointer-events-none" />
+      {/* 1. Slowly Moving Perspective Grid */}
+      <motion.div 
+        animate={{ 
+          backgroundPosition: ['0px 0px', '60px 60px', '0px 0px'],
+          opacity: [0.18, 0.28, 0.18]
+        }}
+        transition={{ 
+          duration: 20, 
+          repeat: Infinity, 
+          ease: 'easeInOut' 
+        }}
+        className="absolute inset-0 bg-grid-pattern pointer-events-none"
+        style={{
+          backgroundSize: '40px 40px',
+          transform: `translate3d(${mousePosition.x * -0.2}px, ${mousePosition.y * -0.2}px, 0)`
+        }}
+      />
+
+      {/* 2. Slowly Drifting Gradient Mesh Orbs */}
+      {/* Orb A: Warm Amber Brand Glow (Top Left) */}
+      <motion.div 
+        animate={{ 
+          x: [-40, 50, -40],
+          y: [-20, 40, -20],
+          scale: [1, 1.2, 1],
+          opacity: [0.12, 0.22, 0.12]
+        }}
+        transition={{ 
+          duration: 14, 
+          repeat: Infinity, 
+          ease: 'easeInOut' 
+        }}
+        className="absolute -top-10 left-1/4 w-[550px] h-[550px] bg-[#F27D26] rounded-full blur-[160px] pointer-events-none"
+      />
+
+      {/* Orb B: Deep Violet / Indigo Mesh Glow (Center Right) */}
+      <motion.div 
+        animate={{ 
+          x: [30, -60, 30],
+          y: [20, -40, 20],
+          scale: [1.1, 0.9, 1.1],
+          opacity: [0.08, 0.18, 0.08]
+        }}
+        transition={{ 
+          duration: 18, 
+          repeat: Infinity, 
+          ease: 'easeInOut',
+          delay: 2
+        }}
+        className="absolute top-1/3 right-10 w-[500px] h-[500px] bg-indigo-900/60 rounded-full blur-[170px] pointer-events-none"
+      />
+
+      {/* Orb C: Soft Golden Radiance (Bottom Left) */}
+      <motion.div 
+        animate={{ 
+          x: [-20, 40, -20],
+          y: [40, -30, 40],
+          scale: [0.9, 1.15, 0.9],
+          opacity: [0.06, 0.16, 0.06]
+        }}
+        transition={{ 
+          duration: 16, 
+          repeat: Infinity, 
+          ease: 'easeInOut',
+          delay: 4
+        }}
+        className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-amber-600/30 rounded-full blur-[150px] pointer-events-none"
+      />
+
+      {/* Orb D: Subtle Slate Depth (Top Center) */}
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.3, 1],
+          opacity: [0.04, 0.1, 0.04]
+        }}
+        transition={{ 
+          duration: 12, 
+          repeat: Infinity, 
+          ease: 'easeInOut' 
+        }}
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-white rounded-full blur-[180px] pointer-events-none"
+      />
 
       {/* ================= LEFT FLOATING PROJECT PREVIEW CARDS ================= */}
       
