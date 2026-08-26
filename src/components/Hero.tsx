@@ -11,7 +11,12 @@ import {
   Globe, 
   Terminal,
   ExternalLink,
-  ChevronRight
+  ChevronRight,
+  TrendingUp,
+  Zap,
+  Search,
+  Rocket,
+  Target
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { SmartImage } from './SmartImage';
@@ -311,6 +316,50 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
         <div className="text-[#F27D26] text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] mb-4">
           Web Developer | Digital Creator | Freelancer
         </div>
+
+        {/* Dynamic Animatic Interactive Tags Bar */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap items-center justify-center gap-2 max-w-2xl mb-5"
+        >
+          <motion.span
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-[#F27D26]/10 text-[#F27D26] border border-[#F27D26]/30 flex items-center gap-1.5 shadow-sm cursor-default"
+          >
+            <Zap className="w-3 h-3 animate-bounce" />
+            <span>Full-Stack Web Dev</span>
+          </motion.span>
+
+          <motion.span
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 shadow-sm cursor-default"
+          >
+            <TrendingUp className="w-3 h-3 animate-pulse" />
+            <span>Digital Marketing & Ads</span>
+          </motion.span>
+
+          <motion.span
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-sky-500/10 text-sky-400 border border-sky-500/30 flex items-center gap-1.5 shadow-sm cursor-default"
+          >
+            <Search className="w-3 h-3" />
+            <span>SEO & Organic Growth</span>
+          </motion.span>
+
+          <motion.span
+            whileHover={{ scale: 1.1, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30 flex items-center gap-1.5 shadow-sm cursor-default"
+          >
+            <Palette className="w-3 h-3" />
+            <span>Brand Strategy & Art</span>
+          </motion.span>
+        </motion.div>
 
         {/* Main Hero Headline in Serif Italic */}
         <motion.h1

@@ -143,10 +143,11 @@ export const CreativeShowcase: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ scale: 1.03, y: -6 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 20, delay: idx * 0.05 }}
               data-cursor="explore"
               onClick={() => setSelectedItem(item)}
-              className="group glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-[#F27D26]/40 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-lg"
+              className="group glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-[#F27D26]/50 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-2xl hover:shadow-[#F27D26]/10"
             >
               <div>
                 {/* Image Box */}

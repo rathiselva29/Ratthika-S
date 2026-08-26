@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { MarqueeStrip } from './components/MarqueeStrip';
@@ -19,7 +20,7 @@ import { ResumeModal } from './components/ResumeModal';
 import { CaseStudyModal } from './components/CaseStudyModal';
 import { Project } from './types';
 
-export function App() {
+function PortfolioApp() {
   const [showIntro, setShowIntro] = useState(true);
   const [resumeOpen, setResumeOpen] = useState(false);
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
@@ -43,7 +44,7 @@ export function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#050505] text-[#F5F5F5] selection:bg-[#F27D26] selection:text-black font-sans antialiased overflow-x-hidden">
+    <div className="relative min-h-screen app-canvas bg-[#050505] text-[#F5F5F5] selection:bg-[#F27D26] selection:text-black font-sans antialiased overflow-x-hidden transition-colors duration-300">
       {/* Custom Mouse Following Cursor */}
       <CustomCursor />
 
@@ -127,6 +128,14 @@ export function App() {
         onSelectProjectForContact={handleSelectServiceOrPackage}
       />
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <PortfolioApp />
+    </ThemeProvider>
   );
 }
 

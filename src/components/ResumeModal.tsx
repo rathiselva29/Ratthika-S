@@ -129,14 +129,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   <Phone className="w-3.5 h-3.5 text-indigo-400 print:text-indigo-700" />
                   <span>{PERSONAL_INFO.phone}</span>
                 </a>
+                <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-400">
+                  <Github className="w-3.5 h-3.5 text-indigo-400 print:text-indigo-700" />
+                  <span>github.com/rathiselva29</span>
+                </a>
+                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-400">
+                  <Linkedin className="w-3.5 h-3.5 text-indigo-400 print:text-indigo-700" />
+                  <span>linkedin.com/in/ratthika-s29</span>
+                </a>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-indigo-400 print:text-indigo-700" />
                   <span>{PERSONAL_INFO.location}</span>
                 </div>
-                <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-indigo-400">
-                  <Linkedin className="w-3.5 h-3.5 text-indigo-400 print:text-indigo-700" />
-                  <span>LinkedIn Profile</span>
-                </a>
               </div>
             </div>
 

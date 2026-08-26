@@ -51,11 +51,12 @@ export const BusinessPackages: React.FC<BusinessPackagesProps> = ({ onSelectPack
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.6, delay: idx * 0.15 }}
-                className={`relative flex flex-col justify-between rounded-2xl p-7 sm:p-9 glass-panel transition-all duration-300 group ${
+                whileHover={{ scale: isPopular ? 1.04 : 1.03, y: isPopular ? -12 : -8 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 20, delay: idx * 0.08 }}
+                className={`relative flex flex-col justify-between rounded-2xl p-7 sm:p-9 glass-panel transition-all duration-300 group shadow-xl hover:shadow-2xl ${
                   isPopular 
-                    ? 'border-2 border-[#F27D26]/50 bg-gradient-to-b from-[#F27D26]/10 via-black to-black shadow-2xl shadow-[#F27D26]/10 lg:-translate-y-2' 
-                    : 'border border-white/10 hover:border-[#F27D26]/30'
+                    ? 'border-2 border-[#F27D26]/70 bg-gradient-to-b from-[#F27D26]/15 via-black to-black shadow-2xl shadow-[#F27D26]/20 lg:-translate-y-2' 
+                    : 'border border-white/10 hover:border-[#F27D26]/40 hover:shadow-[#F27D26]/10'
                 }`}
               >
                 

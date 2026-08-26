@@ -27,7 +27,11 @@ export const PERSONAL_INFO = {
   secondaryPhone: '+91 9500282415',
   whatsappUrl: 'https://wa.me/917397732494?text=Hi%20Ratthika,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project!',
   github: 'https://github.com/rathiselva29',
-  linkedin: 'https://www.linkedin.com/in/ratthika-s',
+  githubUsername: 'rathiselva29',
+  linkedin: 'https://www.linkedin.com/in/ratthika-s29',
+  linkedinHandle: 'ratthika-s29',
+  instagram: 'https://www.instagram.com/rathii__selva',
+  instagramHandle: 'rathii__selva',
   profileImagePlaceholder: '/images/ratthika-profile.jpg',
   resumeDownloadUrl: '#resume-modal',
   currentOpenTo: [

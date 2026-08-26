@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Sparkles, FileText, Send, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { ThemeToggle } from './ThemeToggle';
 
 interface NavbarProps {
   onOpenResume: () => void;
@@ -135,6 +136,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onReplayIntro }) =
               <span className="text-[10px] uppercase tracking-wider opacity-60">Available for Freelance</span>
             </div>
 
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
+
             {onReplayIntro && (
               <button
                 onClick={onReplayIntro}
@@ -163,14 +167,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onReplayIntro }) =
             </a>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-white transition-colors"
-            aria-label="Toggle Navigation Menu"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile Right Controls */}
+          <div className="flex sm:hidden items-center gap-2">
+            <ThemeToggle compact={true} />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-white transition-colors"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+
+          {/* Mobile Hamburger Button for tablet view (sm to lg) */}
+          <div className="hidden sm:flex lg:hidden items-center gap-2">
+            <ThemeToggle compact={true} />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-200 hover:text-white transition-colors"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -186,10 +205,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onReplayIntro }) =
           >
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <span className="text-xs font-mono uppercase tracking-widest text-slate-400">Navigation</span>
-              <span className="flex items-center gap-1.5 text-xs text-emerald-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                Available to hire
-              </span>
+              <div className="flex items-center gap-3">
+                <ThemeToggle />
+                <span className="flex items-center gap-1.5 text-xs text-emerald-400">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Available
+                </span>
+              </div>
             </div>
 
             <nav className="flex flex-col gap-1">

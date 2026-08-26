@@ -8,6 +8,7 @@ import {
   MapPin, 
   Linkedin, 
   Github, 
+  Instagram,
   Sparkles, 
   CheckCircle2, 
   ArrowUpRight,
@@ -97,11 +98,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceOr
 
               <div className="space-y-4">
                 {/* WhatsApp Priority Card */}
-                <a
+                <motion.a
                   href="https://wa.me/917397732494?text=Hi%20Ratthika,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20collaborate."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-[#F27D26]/10 border border-white/10 hover:border-[#F27D26]/30 flex items-center justify-between group transition-all"
+                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-[#F27D26]/10 border border-white/10 hover:border-[#F27D26]/40 flex items-center justify-between group transition-all shadow-md"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="w-11 h-11 rounded-md bg-[#F27D26]/10 flex items-center justify-center text-[#F27D26]">
@@ -118,12 +121,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceOr
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-[#F27D26] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
+                </motion.a>
 
                 {/* Email */}
-                <a
+                <motion.a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/10 flex items-center justify-between group transition-all"
+                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/10 flex items-center justify-between group transition-all shadow-md"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="w-11 h-11 rounded-md bg-white/5 flex items-center justify-center text-[#F27D26]">
@@ -140,12 +145,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceOr
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
-                </a>
+                </motion.a>
 
                 {/* Direct Phone */}
-                <a
+                <motion.a
                   href={`tel:${PERSONAL_INFO.phone}`}
-                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/10 flex items-center justify-between group transition-all"
+                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="p-4 rounded-xl bg-white/[0.02] hover:bg-white/[0.06] border border-white/10 flex items-center justify-between group transition-all shadow-md"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="w-11 h-11 rounded-md bg-white/5 flex items-center justify-center text-[#F27D26]">
@@ -162,7 +169,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceOr
                     </div>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" />
-                </a>
+                </motion.a>
 
                 {/* Location */}
                 <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 flex items-center gap-3.5">
@@ -181,28 +188,68 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialServiceOr
                 </div>
               </div>
 
-              {/* Social links */}
-              <div className="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs font-mono text-slate-400">Profiles:</span>
-                <div className="flex items-center gap-2">
-                  <a
-                    href={PERSONAL_INFO.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 rounded-sm bg-white/5 hover:bg-white/15 border border-white/10 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors"
-                  >
-                    <Linkedin className="w-3.5 h-3.5 text-[#F27D26]" />
-                    <span>LinkedIn</span>
-                  </a>
-                  <a
+              {/* Social profiles / Handles */}
+              <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
+                <span className="text-xs font-mono uppercase tracking-wider text-slate-400 font-bold block">
+                  Online Profiles & Socials:
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <motion.a
                     href={PERSONAL_INFO.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 rounded-sm bg-white/5 hover:bg-white/15 border border-white/10 text-xs font-medium text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors"
+                    whileHover={{ scale: 1.04, y: -2 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 flex items-center gap-2.5 transition-all group"
                   >
-                    <Github className="w-3.5 h-3.5 text-slate-300" />
-                    <span>GitHub</span>
-                  </a>
+                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-white shrink-0 group-hover:bg-white group-hover:text-black transition-colors">
+                      <Github className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] font-mono uppercase text-slate-400 block">GitHub</span>
+                      <span className="text-xs font-semibold text-white truncate block group-hover:text-[#F27D26] transition-colors">
+                        {PERSONAL_INFO.githubUsername}
+                      </span>
+                    </div>
+                  </motion.a>
+
+                  <motion.a
+                    href={PERSONAL_INFO.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.04, y: -2 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="p-2.5 rounded-xl bg-white/5 hover:bg-pink-500/10 border border-white/10 hover:border-pink-500/30 flex items-center gap-2.5 transition-all group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 shrink-0 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                      <Instagram className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] font-mono uppercase text-slate-400 block">Instagram</span>
+                      <span className="text-xs font-semibold text-white truncate block group-hover:text-pink-400 transition-colors">
+                        {PERSONAL_INFO.instagramHandle}
+                      </span>
+                    </div>
+                  </motion.a>
+
+                  <motion.a
+                    href={PERSONAL_INFO.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.04, y: -2 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="p-2.5 rounded-xl bg-white/5 hover:bg-sky-500/10 border border-white/10 hover:border-sky-500/30 flex items-center gap-2.5 transition-all group"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 shrink-0 group-hover:bg-sky-500 group-hover:text-white transition-colors">
+                      <Linkedin className="w-4 h-4" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[10px] font-mono uppercase text-slate-400 block">LinkedIn</span>
+                      <span className="text-xs font-semibold text-white truncate block group-hover:text-sky-400 transition-colors">
+                        {PERSONAL_INFO.linkedinHandle}
+                      </span>
+                    </div>
+                  </motion.a>
                 </div>
               </div>
             </div>

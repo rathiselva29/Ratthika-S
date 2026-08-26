@@ -64,6 +64,25 @@ export const AboutSection: React.FC = () => {
               
               {/* Frame Card */}
               <div className="relative glass-panel rounded-2xl p-4 sm:p-5 border border-white/10 overflow-hidden shadow-2xl">
+                {/* Floating Marketing & Tech Orbit Badges */}
+                <motion.div
+                  animate={{ y: [0, -8, 0], rotate: [-1, 2, -1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  className="absolute top-8 -left-2 z-20 px-3 py-1 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-bold shadow-lg flex items-center gap-1 backdrop-blur-md"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  <span>Digital Marketing Pro</span>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, 8, 0], rotate: [2, -2, 2] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+                  className="absolute top-24 -right-2 z-20 px-3 py-1 rounded-full glass-panel border border-[#F27D26]/40 text-[#F27D26] text-[10px] font-mono font-bold shadow-lg flex items-center gap-1 backdrop-blur-md"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F27D26] animate-pulse" />
+                  <span>Full-Stack Web Dev</span>
+                </motion.div>
+
                 <div className="relative rounded-xl overflow-hidden aspect-[3/4] bg-[#090d16] flex items-center justify-center border border-white/10">
                   <img
                     src="/images/profile/ratthika-profile.jpg"
@@ -100,24 +119,36 @@ export const AboutSection: React.FC = () => {
 
             {/* Quick Metrics Bar */}
             <div className="grid grid-cols-3 gap-3 w-full max-w-md mt-5">
-              <div className="glass-panel p-3.5 rounded-xl text-center border border-white/10">
+              <motion.div 
+                whileHover={{ scale: 1.06, y: -4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="glass-panel p-3.5 rounded-xl text-center border border-white/10 shadow-lg cursor-pointer"
+              >
                 <span className="text-xl sm:text-2xl font-serif italic text-white">
                   3+
                 </span>
                 <p className="text-[10px] uppercase tracking-wider opacity-50 mt-0.5">Internships</p>
-              </div>
-              <div className="glass-panel p-3.5 rounded-xl text-center border border-white/10">
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.06, y: -4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="glass-panel p-3.5 rounded-xl text-center border border-white/10 shadow-lg cursor-pointer"
+              >
                 <span className="text-xl sm:text-2xl font-serif italic text-[#F27D26]">
                   8.2
                 </span>
                 <p className="text-[10px] uppercase tracking-wider opacity-50 mt-0.5">B.E. CGPA</p>
-              </div>
-              <div className="glass-panel p-3.5 rounded-xl text-center border border-white/10">
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.06, y: -4 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className="glass-panel p-3.5 rounded-xl text-center border border-white/10 shadow-lg cursor-pointer"
+              >
                 <span className="text-xl sm:text-2xl font-serif italic text-white">
                   100%
                 </span>
                 <p className="text-[10px] uppercase tracking-wider opacity-50 mt-0.5">Dedicated</p>
-              </div>
+              </motion.div>
             </div>
           </div>
 

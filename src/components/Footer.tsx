@@ -8,6 +8,7 @@ import {
   Phone, 
   Linkedin, 
   Github, 
+  Instagram,
   ExternalLink 
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
@@ -45,29 +46,42 @@ export const Footer: React.FC = () => {
 
             <div className="flex items-center gap-3 pt-2">
               <a
-                href={PERSONAL_INFO.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4 text-[#F27D26]" />
-              </a>
-              <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
-                aria-label="GitHub"
+                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+                aria-label="GitHub (@rathiselva29)"
+                title="GitHub: rathiselva29"
               >
-                <Github className="w-4 h-4 text-slate-300" />
+                <Github className="w-4 h-4 text-white" />
+              </a>
+              <a
+                href={PERSONAL_INFO.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-pink-500/20 border border-white/10 hover:border-pink-500/40 flex items-center justify-center text-slate-300 hover:text-pink-400 transition-colors"
+                aria-label="Instagram (@rathii__selva)"
+                title="Instagram: rathii__selva"
+              >
+                <Instagram className="w-4 h-4 text-pink-400" />
+              </a>
+              <a
+                href={PERSONAL_INFO.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-sky-500/20 border border-white/10 hover:border-sky-500/40 flex items-center justify-center text-slate-300 hover:text-sky-400 transition-colors"
+                aria-label="LinkedIn (ratthika-s29)"
+                title="LinkedIn: ratthika-s29"
+              >
+                <Linkedin className="w-4 h-4 text-[#F27D26]" />
               </a>
               <a
                 href={`https://wa.me/917397732494`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-white/10 border border-white/10 flex items-center justify-center text-[#F27D26] transition-colors"
+                className="w-9 h-9 rounded-sm bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 flex items-center justify-center text-[#F27D26] hover:text-emerald-400 transition-colors"
                 aria-label="WhatsApp"
+                title="WhatsApp: +91 7397732494"
               >
                 <MessageSquare className="w-4 h-4" />
               </a>
