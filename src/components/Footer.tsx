@@ -12,6 +12,7 @@ import {
   ExternalLink 
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { BrandLogo } from './BrandLogo';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -29,19 +30,10 @@ export const Footer: React.FC = () => {
           
           {/* Col 1 & 2: Brand Identity */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-sm bg-[#F27D26] p-0.5">
-                <div className="w-full h-full bg-black rounded-[2px] flex items-center justify-center font-serif font-bold text-xs text-white">
-                  R
-                </div>
-              </div>
-              <span className="font-serif italic font-bold text-xl tracking-tight text-white">
-                {PERSONAL_INFO.brandLogo}
-              </span>
-            </div>
+            <BrandLogo size="lg" showSubtitle={true} onClick={scrollToTop} />
 
             <p className="text-sm text-[#F5F5F5]/70 max-w-sm leading-relaxed">
-              Professional Web Developer, Creative Designer, and Freelancer building high-performance websites and complete digital solutions for businesses and individuals worldwide.
+              Full-Stack Web Developer & Digital Marketing Specialist engineering fast web applications, high-converting SEO funnels, and memorable brand identities.
             </p>
 
             <div className="flex items-center gap-3 pt-2">

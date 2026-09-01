@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Sparkles, FileText, Send, ArrowUpRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { ThemeToggle } from './ThemeToggle';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
   onOpenResume: () => void;
@@ -91,14 +92,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onReplayIntro }) =
           <a
             href="#home"
             onClick={(e) => scrollToSection(e, '#home')}
-            className="flex items-center gap-2.5 group"
+            className="flex items-center"
           >
-            <div className="w-8 h-8 rounded-md bg-[#F27D26] p-0.5 shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
-              <span className="font-serif font-bold text-xs text-black">R</span>
-            </div>
-            <span className="text-xl font-bold tracking-tighter text-white">
-              RATTHIKA<span className="text-[#F27D26]">.</span>
-            </span>
+            <BrandLogo size="md" showSubtitle={false} />
           </a>
 
           {/* Desktop Navigation Links */}
