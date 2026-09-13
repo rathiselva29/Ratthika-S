@@ -36,7 +36,7 @@ export const WebApplicationsSection: React.FC<WebApplicationsSectionProps> = ({ 
     : ALL_PROJECTS.filter(p => p.category === activeFilter);
 
   return (
-    <section id="applications" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] overflow-hidden">
+    <section id="applications" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-[#F27D26]/5 rounded-full blur-[160px] pointer-events-none" />
 
@@ -87,8 +87,22 @@ export const WebApplicationsSection: React.FC<WebApplicationsSectionProps> = ({ 
               className="glass-panel rounded-2xl p-6 border border-white/10 hover:border-[#F27D26]/60 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-2xl hover:shadow-[#F27D26]/10"
             >
               <div>
-                {/* Visual Image Header */}
-                <div className="relative aspect-video rounded-xl overflow-hidden bg-black mb-5 border border-white/10">
+                {/* 3D Floating Interactive Device Mockup Frame */}
+                <div className="relative aspect-video rounded-xl overflow-hidden bg-[#0a0c10] mb-5 border border-white/15 shadow-xl group-hover:border-[#F27D26]/40 transition-colors">
+                  {/* Browser / Device Header Bar */}
+                  <div className="flex items-center justify-between px-2.5 py-1 bg-black/70 border-b border-white/10 z-20 relative">
+                    <div className="flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-rose-500/80" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-500/80" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/80" />
+                      <span className="text-[9px] font-mono text-slate-400 ml-1.5 truncate max-w-[120px]">app://{project.id}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[9px] font-mono text-slate-400">
+                      <Smartphone className="w-2.5 h-2.5" />
+                      <span>3D View</span>
+                    </div>
+                  </div>
+
                   <SmartImage
                     src={project.image}
                     alt={project.title}
@@ -99,16 +113,16 @@ export const WebApplicationsSection: React.FC<WebApplicationsSectionProps> = ({ 
                       project.id.includes('skyfly') ? 'skyfly' :
                       'sora'
                     }
-                    className="w-full h-full"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 z-10">
+                  <div className="absolute top-8 left-3 z-10">
                     <span className="px-2.5 py-0.5 rounded-sm text-[10px] font-mono bg-black/80 text-[#F27D26] border border-[#F27D26]/30 backdrop-blur-md">
                       {project.category}
                     </span>
                   </div>
 
                   {project.statusBadge && (
-                    <div className="absolute top-3 right-3 z-10">
+                    <div className="absolute top-8 right-3 z-10">
                       <span className="px-2 py-0.5 rounded-sm text-[10px] font-mono bg-[#F27D26]/20 text-[#F27D26] border border-[#F27D26]/30 backdrop-blur-md">
                         {project.statusBadge}
                       </span>

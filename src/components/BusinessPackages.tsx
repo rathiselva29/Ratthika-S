@@ -20,7 +20,7 @@ interface BusinessPackagesProps {
 
 export const BusinessPackages: React.FC<BusinessPackagesProps> = ({ onSelectPackage }) => {
   return (
-    <section id="packages" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] overflow-hidden">
+    <section id="packages" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
       {/* Dynamic ambient backdrops */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#F27D26]/5 rounded-full blur-[180px] pointer-events-none" />
 

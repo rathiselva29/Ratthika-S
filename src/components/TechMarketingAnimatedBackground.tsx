@@ -167,9 +167,9 @@ export const TechMarketingAnimatedBackground: React.FC<TechMarketingAnimatedBack
           className="w-full h-full object-cover object-center filter brightness-90 contrast-125"
           referrerPolicy="no-referrer"
         />
-        {/* Cinematic Vignette Overlay to seamlessly blend with content */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/75 to-[#050505]/60" />
-        <div className="absolute inset-0 bg-radial-vignette opacity-80" />
+        {/* Cinematic Vignette Overlay to seamlessly blend with continuous 3D canvas */}
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-radial-vignette opacity-40" />
       </motion.div>
 
       {/* 2. Interactive Animated Matrix & Node Connection Canvas */}

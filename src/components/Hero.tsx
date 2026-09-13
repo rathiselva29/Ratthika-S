@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
     <section 
       id="home" 
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#050505]"
+      className="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent"
     >
       {/* ================= 3D AI ANIMATED VIDEO & CANVAS MATRIX BACKGROUND ================= */}
       <TechMarketingAnimatedBackground mousePosition={mousePosition} />

@@ -18,6 +18,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { CinematicIntro } from './components/CinematicIntro';
 import { ResumeModal } from './components/ResumeModal';
 import { CaseStudyModal } from './components/CaseStudyModal';
+import { Continuous3DCanvas } from './components/Continuous3DCanvas';
 import { Project } from './types';
 
 function PortfolioApp() {
@@ -44,7 +45,10 @@ function PortfolioApp() {
   };
 
   return (
-    <div className="relative min-h-screen app-canvas bg-[#050505] text-[#F5F5F5] selection:bg-[#F27D26] selection:text-black font-sans antialiased overflow-x-hidden transition-colors duration-300">
+    <div className="relative min-h-screen app-canvas bg-[#050505]/80 text-[#F5F5F5] selection:bg-[#F27D26] selection:text-black font-sans antialiased overflow-x-hidden transition-colors duration-300">
+      {/* Continuous 3D Animated WebGL Experience Throughout Website */}
+      <Continuous3DCanvas />
+
       {/* Custom Mouse Following Cursor */}
       <CustomCursor />
 

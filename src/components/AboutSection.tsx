@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
     : TECHNICAL_SKILLS.filter(s => s.category === activeSkillCategory || (activeSkillCategory === 'AI/ML' && s.category === 'AI/ML'));
 
   return (
-    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] overflow-hidden">
+    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#F27D26]/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none" />
@@ -472,6 +472,79 @@ export const AboutSection: React.FC = () => {
                   {cat}
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Interactive Animated Technical Radar HUD */}
+          <div className="mb-8 p-6 rounded-2xl bg-black/40 border border-white/10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
+            {/* Left: Animated Radar Screen */}
+            <div className="relative w-44 h-44 shrink-0 flex items-center justify-center">
+              {/* Concentric rings */}
+              <div className="absolute inset-0 rounded-full border border-emerald-500/20" />
+              <div className="absolute inset-4 rounded-full border border-emerald-500/30" />
+              <div className="absolute inset-8 rounded-full border border-emerald-500/40" />
+              <div className="absolute inset-14 rounded-full border border-emerald-500/50" />
+              {/* Crosshairs */}
+              <div className="absolute inset-x-0 top-1/2 h-[1px] bg-emerald-500/20" />
+              <div className="absolute inset-y-0 left-1/2 w-[1px] bg-emerald-500/20" />
+              
+              {/* Rotating radar sweep beam */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  background: 'conic-gradient(from 0deg, rgba(16, 185, 129, 0.4) 0deg, rgba(16, 185, 129, 0.05) 60deg, transparent 90deg)'
+                }}
+              />
+
+              {/* Skill blips on radar */}
+              <div className="absolute top-10 right-12 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-[#F27D26] animate-ping" />
+                <span className="text-[8px] font-mono text-white/70">React</span>
+              </div>
+              <div className="absolute bottom-10 left-10 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <span className="text-[8px] font-mono text-white/70">Node.js</span>
+              </div>
+              <div className="absolute top-14 left-12 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="text-[8px] font-mono text-white/70">SEO</span>
+              </div>
+              <div className="absolute bottom-12 right-10 flex items-center gap-1">
+                <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+                <span className="text-[8px] font-mono text-white/70">Python</span>
+              </div>
+
+              {/* Center Core Node */}
+              <div className="w-3.5 h-3.5 rounded-full bg-white border-2 border-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.9)] z-10" />
+            </div>
+
+            {/* Right: Technical Radar Insights */}
+            <div className="flex-1 space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">
+                  Active Developer Telemetry & Skill Constellation
+                </span>
+              </div>
+              <h4 className="text-base sm:text-lg font-bold text-white font-serif italic">
+                3D Developer Environment & Continuous Node Mapping
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed font-light">
+                Connecting 14+ technical competencies across Full-Stack JavaScript, Machine Learning algorithms, responsive UI design systems, and Google organic search architecture in one unified ecosystem.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                <span className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  Radar Sweep: Active
+                </span>
+                <span className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-[#F27D26]/10 text-[#F27D26] border border-[#F27D26]/30">
+                  3D Spatial Nodes: Synchronized
+                </span>
+                <span className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                  Scroll Camera: Enabled
+                </span>
+              </div>
             </div>
           </div>
 

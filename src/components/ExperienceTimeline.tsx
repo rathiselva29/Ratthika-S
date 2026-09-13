@@ -24,7 +24,7 @@ export const ExperienceTimeline: React.FC = () => {
     : TIMELINE_DATA.filter(item => item.type === filter);
 
   return (
-    <section id="journey" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] overflow-hidden">
+    <section id="journey" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#F27D26]/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[160px] pointer-events-none" />
@@ -112,12 +112,14 @@ export const ExperienceTimeline: React.FC = () => {
                     isEven ? 'md:flex-row-reverse' : ''
                   }`}
                 >
-                  {/* Timeline Center Node Badge */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-9 h-9 rounded-xl bg-black border-2 border-[#F27D26] flex items-center justify-center text-[#F27D26] shadow-xl shadow-[#F27D26]/30 z-20">
+                  {/* 3D Timeline Glowing Milestone Node with Pulsating Halo */}
+                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-xl bg-black border-2 border-[#F27D26] flex items-center justify-center text-[#F27D26] shadow-xl shadow-[#F27D26]/40 z-20 group-hover:scale-110 transition-transform">
+                    {/* Glowing pulse aura */}
+                    <span className="absolute -inset-1 rounded-xl bg-[#F27D26]/30 animate-ping pointer-events-none opacity-40" />
                     {isEducation ? (
-                      <GraduationCap className="w-4 h-4 text-[#F27D26]" />
+                      <GraduationCap className="w-5 h-5 text-[#F27D26]" />
                     ) : (
-                      <Briefcase className="w-4 h-4 text-[#F27D26]" />
+                      <Briefcase className="w-5 h-5 text-[#F27D26]" />
                     )}
                   </div>
 

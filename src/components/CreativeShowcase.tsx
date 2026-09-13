@@ -27,10 +27,18 @@ export const CreativeShowcase: React.FC = () => {
     : CREATIVE_SHOWCASE_ITEMS.filter(item => item.category === activeFilter);
 
   return (
-    <section id="showcase" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#050505] overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-[#F27D26]/5 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-white/[0.02] rounded-full blur-[160px] pointer-events-none" />
+    <section id="showcase" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
+      {/* Background ambient lighting and subtle floating paint particles */}
+      <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-[#F27D26]/8 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-500/5 rounded-full blur-[160px] pointer-events-none" />
+
+      {/* Floating 3D Paint Particles */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <span className="absolute top-20 left-16 w-3 h-3 rounded-full bg-pink-400/40 blur-xs animate-ping" />
+        <span className="absolute top-1/2 right-24 w-4 h-4 rounded-full bg-amber-400/30 blur-xs animate-pulse" />
+        <span className="absolute bottom-28 left-1/3 w-3 h-3 rounded-full bg-[#F27D26]/40 blur-xs animate-ping" />
+        <span className="absolute top-3/4 right-1/4 w-2 h-2 rounded-full bg-purple-400/40 blur-xs animate-pulse" />
+      </div>
 
       <div className="max-w-7xl mx-auto">
         
